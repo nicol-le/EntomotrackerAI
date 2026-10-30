@@ -1,0 +1,6 @@
+names:
+  0: Insecta indet.
+  1: Tribolium confusum
+path: C:\Users\nicol\OneDrive\Área de Trabalho\IC\EntomoTracker\datasets\dataset_insetos_20261018_101812
+train: images/train
+val: images/val

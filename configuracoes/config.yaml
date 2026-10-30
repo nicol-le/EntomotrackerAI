@@ -1,0 +1,62 @@
+# ==============================================================================
+# ENTOMOTRACK AI - ARQUIVO DE CONFIGURAÇÃO GERAL
+# Otimizado para CPU e 8 GB de RAM (Windows 10/11)
+# ==============================================================================
+
+projeto:
+  nome: "EntomoTrack AI"
+  versao: "1.0.0"
+  descricao: "Rastreamento e Análise Comportamental de Insetos em Microscopia"
+  # O sistema resolve caminhos relativos à raiz do projeto automaticamente
+  diretorio_raiz: "."
+
+hardware:
+  dispositivo: "cpu"            # 'cpu' exclusivo, sem necessidade de GPU
+  threads_cpu: 4                # Limite de threads para evitar congelamento do sistema
+  tamanho_lote_treino: 4        # Batch size reduzido para 8 GB RAM
+  limite_fps_preview: 20        # Limite de FPS na visualização para não sobrecarregar CPU
+
+camera:
+  indice_padrao: 0              # Índice da câmera USB (HAYEAR)
+  backend: "DSHOW"              # cv2.CAP_DSHOW no Windows para melhor compatibilidade USB
+  largura: 1280                 # Resolução de captura (1280x720 ou 1920x1080)
+  altura: 720
+  fps: 30                       # Taxa de captura nominal
+  nome_filtro_hayear: "HAYEAR"  # Padrão de busca para identificar câmera
+
+inferencia:
+  tamanho_imagem: 416           # Resolução quadrada para inferência (leve para CPU: 416x416 ou 320x320)
+  confianca_minima: 0.35        # Limiar de confiança para detecção geral
+  confianca_incerta_max: 0.55   # Acima disto = Confiável (Situação A). Entre min e incerta = Incerta (Situação B)
+  iou_threshold: 0.45           # Limiar de sobreposição NMS (Non-Maximum Suppression)
+  processar_quadros_alternados: 2 # Pula quadros para acelerar em CPU (1 = todo quadro, 2 = metade, etc.)
+  modelo_padrao: "modelos/yolov8n_insetos_base.pt"
+
+rastreamento:
+  metodo: "bytetrack"
+  track_thresh: 0.4             # Limiar de pontuação para manter trilha ativa
+  track_buffer: 30              # Quantidade de quadros para manter ID em oclusão temporária
+  match_thresh: 0.8             # Limiar de associação IoU entre quadros
+  comprimento_historico: 60     # Tamanho da cauda da trajetória desenhada (em quadros)
+
+calibracao:
+  escala_ativa: false           # Se false, medições são em pixels
+  pixels_por_milimetro: 1.0     # Fator de conversão calibrado
+  distancia_referencia_mm: 1.0  # Referência conhecida em mm
+
+analise_comportamental:
+  limiar_imobilidade_px: 2.0    # Deslocamento em pixels abaixo do qual é considerado parado
+  janela_suavizacao_vel: 5      # Amostras para suavização da velocidade
+  tamanho_grade_densidade: 50   # Resolução da grade para mapa de calor/densidade
+
+banco_dados:
+  caminho_sqlite: "banco_dados/entomotrack.db"
+
+diretorios:
+  modelos: "modelos"
+  videos: "videos"
+  imagens: "imagens"
+  resultados: "resultados"
+  datasets: "datasets"
+  recortes: "imagens/recortes"
+  pendentes: "imagens/pendentes"

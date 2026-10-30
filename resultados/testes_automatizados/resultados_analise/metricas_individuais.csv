@@ -1,0 +1,2 @@
+track_id,classe,confianca_media,total_quadros,tempo_total_s,distancia_total_mm,velocidade_media_mm/s,velocidade_maxima_mm/s,tempo_ativo_s,tempo_imovel_s,indice_atividade_pct,mudancas_direcao,calibrado
+1,inseto,0.9,5,0.4,2.0,5.0,10.0,0.2,0.2,50.0,0,True

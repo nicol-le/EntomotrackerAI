@@ -1,0 +1,27 @@
+# ==============================================================================
+# ENTOMOTRACK AI - DEPENDÊNCIAS DO PROJETO (CPU + 8GB RAM)
+# Compatível com Python 3.11 / 3.12 / 3.13 no Windows
+# ==============================================================================
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Processamento Numérico e Estruturas de Dados
+numpy>=1.26.0,<2.3.0
+pandas>=2.1.0,<2.3.0
+scipy>=1.11.0
+
+# Visão Computacional e Aquisição de Imagem
+opencv-python>=4.8.0.76
+
+# Inteligência Artificial e Detecção de Objetos (CPU)
+torch>=2.2.0
+torchvision>=0.17.0
+ultralytics>=8.1.0
+
+# Manipulação de Imagens e Visualização Gráfica
+pillow>=10.0.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Configurações e Utilitários
+pyyaml>=6.0.1

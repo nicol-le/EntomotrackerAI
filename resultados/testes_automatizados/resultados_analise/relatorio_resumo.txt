@@ -1,0 +1,29 @@
+======================================================================
+ENTOMOTRACK AI - RELATÓRIO DE ANÁLISE COMPORTAMENTAL DE INSETOS
+======================================================================
+
+Data da análise: 18/10/2026 10:20:47
+Status da Calibração Espacial: CALIBRADO (10.0 px/mm)
+Total de insetos individuais analisados: 1
+Limiar de imobilidade configurado: 1.0 pixels/frame
+
+AVISO CIENTÍFICO:
+Os tempos de imobilidade e demais indicadores derivam de critérios geométricos
+e parâmetros configuráveis de visão computacional, devendo ser interpretados
+com validação metodológica para cada grupo taxonômico específico.
+
+----------------------------------------------------------------------
+RESUMO ESTATÍSTICO GERAL:
+----------------------------------------------------------------------
+Distância média percorrida: 2.00 mm (Desvio Padrão: nan)
+Velocidade média geral: 5.00 mm/s
+Média de atividade: 50.0%
+Média de mudanças de direção: 0.0
+
+----------------------------------------------------------------------
+MÉTRICAS INDIVIDUAIS POR INSETO:
+----------------------------------------------------------------------
+ track_id classe  confianca_media  total_quadros  tempo_total_s  distancia_total_mm  velocidade_media_mm/s  velocidade_maxima_mm/s  tempo_ativo_s  tempo_imovel_s  indice_atividade_pct  mudancas_direcao  calibrado
+        1 inseto              0.9              5            0.4                 2.0                    5.0                    10.0            0.2             0.2                  50.0                 0       True
+
+======================================================================
